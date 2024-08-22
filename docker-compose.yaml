@@ -1,0 +1,17 @@
+version: '3'
+services:
+  product:
+    container_name: duy-spring
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: duynguyen03/product
+    ports:
+      - "8080:8080"
+    networks:
+      - my-network
+    restart: always
+
+networks:
+  my-network:
+    driver: bridge

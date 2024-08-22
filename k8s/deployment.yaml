@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: duy-spring-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: duy-spring
+  template:
+    metadata:
+      labels:
+        app: duy-spring
+    spec:
+      containers:
+      - name: duy-spring-container
+        image: duynguyen03/duy-spring-user:1.0
+        ports:
+        - containerPort: 8080
